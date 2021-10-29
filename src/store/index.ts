@@ -56,6 +56,8 @@ const actions: ActionTree<RootState, RootState> = {
         if (state.products.length) {
           products = products.slice(1, products.length);
         }
+        console.log(products);
+        
         commit("SET_PRODUCTS", products);
       })
       .catch((error) => {
