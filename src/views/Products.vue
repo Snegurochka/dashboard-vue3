@@ -10,6 +10,7 @@
       >
       </ProductItem>
     </div>
+    <button @click="loadmore" v-if="!products.products_end">Load more</button>
   </section>
 </template>
 
@@ -26,6 +27,11 @@ export default defineComponent({
   },
   computed: {
     ...mapState(["products"]),
+  },
+  methods: {
+    loadmore() {
+      this.$store.dispatch("setProducts");
+    },
   },
 });
 </script>
